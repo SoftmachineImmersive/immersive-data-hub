@@ -1,0 +1,86 @@
+# OSM Planetariums Dataset
+
+This dataset provides a global list of planetariums extracted and curated from OpenStreetMap (OSM). It is part of the SIP (Sustainable Immersive Practices) initiative by [Softmachine Immersive](https://softmachine.de), supporting data-informed analysis of immersive infrastructure worldwide.
+
+---
+
+## 🌍 Data Source
+
+- **Platform:** [OpenStreetMap](https://www.openstreetmap.org)
+- **Extraction Date:** [Please insert exact date]
+- **Query Method:** Overpass API
+
+---
+
+## 🧪 Methodology
+
+### Methodological Note: Planetarium Data Extraction and Processing
+
+**1. Data Source**  
+The initial dataset was extracted from OpenStreetMap (OSM) using the Overpass API. All nodes, ways, and relations tagged with `amenity=planetarium` were included, resulting in 888 entries worldwide. Each record included coordinates and, where available, address components such as city, state, or country.
+
+**2. Country Assignment**  
+Since many OSM entries lacked explicit country tags, we geocoded each coordinate against Natural Earth boundary polygons. Initially, 1:110m resolution boundaries were used, but these excluded island and coastal entries. We then switched to 1:50m data, enabling complete assignment of all 888 locations to specific countries.
+
+**3. Data Cleaning**
+- Empty names were replaced with the placeholder `"No-Name"`.
+- Planetariums were numbered per country (e.g., “Germany 1”, “Germany 2”) for easy referencing.
+- A Google Maps link was generated for each entry based on lat/lon for quick validation.
+- Erroneous or duplicate entries (e.g., in Argentina, Chile, Germany) were removed.
+
+**4. Filtering**  
+The original dataset contained both planetariums and observatories. Using keyword-based exclusion (e.g., "Observatory", "Sternwarte", "天文台", "Обсерватория"), observatories were removed, leaving ~830 valid planetarium entries.
+
+**5. Translation and Normalization**  
+Many names appeared in non-Latin scripts (e.g., Chinese, Arabic, Cyrillic). All were translated into English with the original preserved in parentheses for global readability and cultural accuracy.  
+Examples:
+- 上海天文馆 → 上海天文馆 (Shanghai Planetarium)  
+- مركز القبة السماوية → مركز القبة السماوية (Planetarium Center)
+
+**6. Completeness and Limitations**
+- Final dataset: **~830 unique planetariums worldwide**
+- Industry estimates suggest ~4,000 fulldome venues exist globally. Thus, OSM may represent ~20–25% of the actual total.
+- Still, this curated dataset is **open, transparent, reproducible**, and provides a solid baseline for comparative analysis and integration with proprietary sources.
+
+---
+
+## 📄 File Description
+
+**Filename:** `planetariums_world.geojson` (or `.csv`)  
+**Format:** GeoJSON (EPSG:4326) or UTF-8 CSV  
+
+**Main columns:**
+
+| Column        | Description                          |
+|---------------|--------------------------------------|
+| `name`        | Planetarium name (translated)        |
+| `lat`         | Latitude                             |
+| `lon`         | Longitude                            |
+| `addr:city`   | City (if available)                  |
+| `addr:country`| Country (assigned via polygon match) |
+| `website`     | Official website (if mapped)         |
+| `wikidata`    | Wikidata entry (if available)        |
+| `gmap_link`   | Generated Google Maps link           |
+
+---
+
+## 🔖 License & Attribution
+
+This dataset is based on OpenStreetMap data, licensed under the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/). You are free to use, modify and share this dataset under the terms of that license.
+
+**Curation and processing by:**  
+[Softmachine Immersive](https://softmachine.de)  
+📧 mail@softmachine.de
+
+### Please cite as:
+
+> Softmachine Immersive (2025): *OSM Planetariums Dataset – Global Infrastructure Extraction (v1.0)*.  
+> https://github.com/SoftmachineImmersive/immersive-data-hub  
+> https://softmachine.de
+
+---
+
+## 🧭 Related Projects
+
+This dataset is part of the **Immersive Data Hub**, aiming to build an open, modular foundation for understanding the global distribution and terminology of immersive spaces.
+
