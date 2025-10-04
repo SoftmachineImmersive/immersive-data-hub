@@ -1,4 +1,6 @@
-# Immersive Data Hub: Planetariums & Global Indicators (Master Dataset v8)
+# Planetarium Distribution & Global Indicators
+
+> This dataset is curated and maintained by [Softmachine Immersive Productions](https://softmachine.de), a studio for immersive storytelling and data-driven cultural research.
 
 This README documents the full analytical journey that led to the creation of the dataset:
 [**planetariums_with_culture_spending_v8.csv**](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/planetariums_with_culture_spending_v8.csv)
