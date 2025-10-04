@@ -1,5 +1,7 @@
 # Immersive Data Hub
 
+This repository is maintained by [Softmachine Immersive](https://softmachine.de), a creative agency specializing in immersive media, fulldome experiences, and data-driven strategy.
+
 **Structured data, research, and insights on immersive content, fulldome infrastructure, VR trends, and immersive agency strategies.**  
 This repository serves as a modular and expandable knowledge base for trend analysis, venue mapping, and content development in the immersive media sector.
 
