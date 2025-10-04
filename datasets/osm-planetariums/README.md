@@ -1,4 +1,4 @@
-# Planetarium Distribution & Global Indicators
+# OSM-Based Planetarium Distribution & Global Indicators
 
 > This dataset is curated and maintained by [Softmachine Immersive Productions](https://softmachine.de), a studio for immersive storytelling and data-driven cultural research.
 
