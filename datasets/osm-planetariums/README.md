@@ -1,67 +1,121 @@
-> This dataset is part of the Immersive Data Hub maintained by [Softmachine Immersive Productions](https://softmachine.de/), a creative agency for immersive media, fulldome content, and data-driven strategy.
+# Immersive Data Hub: Planetariums & Global Indicators (Master Dataset v8)
 
-# 🌍 OSM Planetariums Dataset
+This README documents the full analytical journey that led to the creation of the dataset:
+[**planetariums_with_culture_spending_v8.csv**](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/planetariums_with_culture_spending_v8.csv)
+
+This dataset brings together international data on planetariums, GDP, education, population, innovation, and cultural heritage investment. It provides a multi-dimensional view on the presence of planetariums per country or region, in the context of development, public infrastructure, and knowledge ecosystems.
+
+---
+
+## 🌍 Initial Phase: Planetarium Extraction from OSM
+
+### 📊 OSM Planetariums Dataset
 
 This dataset contains geolocated information on over 800 planetariums worldwide, extracted and curated from OpenStreetMap (OSM) using custom spatial processing.
 
----
+### 🧪 Methodological Note: Planetarium Data Extraction and Processing
 
-## 🧪 Methodological Note: Planetarium Data Extraction and Processing
+**1. Data Source**
+Queried from OSM using the Overpass API with `amenity=planetarium`. Yielded 888 entries with coordinates and metadata.
 
-### 1. Data Source  
-The initial dataset was extracted from OpenStreetMap (OSM) using the Overpass API. We queried all nodes, ways, and relations tagged with `amenity=planetarium`, which yielded 888 entries worldwide. These entries included coordinates, names, and, when available, address fields like city or country.
+**2. Country Assignment**
+Coordinates matched to Natural Earth 1:50m country polygons. Full global assignment achieved.
 
-### 2. Country Assignment  
-Because many entries lacked country data, we matched lat/lon coordinates to country polygons from [Natural Earth](https://www.naturalearthdata.com/). We first tried 1:110m boundaries, but switched to 1:50m for better accuracy on islands and coasts (e.g., Okinawa, Azores, Shanghai). All 888 were successfully assigned to countries.
+**3. Data Cleaning**
 
-### 3. Data Cleaning  
-- Empty names were replaced with `No-Name` placeholders.  
-- Each entry was given a unique ID per country (e.g., `Germany 1`, `Germany 2`).  
-- A direct Google Maps link was generated from coordinates for easy validation.  
-- A few faulty/duplicate entries were removed (e.g., from Chile, Argentina, Germany).
+* Empty names replaced with placeholders
+* Google Maps links generated from lat/lon
+* Faulty and duplicate entries removed
 
-### 4. Filtering  
-OSM mixes planetariums and observatories. We removed all entries identified as observatories using multilingual keywords (e.g., `Observatory`, `Sternwarte`, `天文台`, `Обсерватория`, etc.). This resulted in ~830 verified planetarium entries.
+**4. Filtering**
 
-### 5. Translation and Normalization  
-- Non-Latin names (Chinese, Arabic, Cyrillic, Japanese) were translated to English.  
-- Original names were retained in parentheses:
-  - Example: 上海天文馆 → 上海天文馆 (Shanghai Planetarium)  
-  - Example: مركز القبة السماوية → مركز القبة السماوية (Planetarium Center)
+* Observatories removed using multilingual keyword detection
+* Final result: ~830 verified planetariums
 
-This makes the dataset both culturally authentic and globally accessible.
+**5. Translation and Normalization**
 
-### 6. Completeness and Limitations  
-- The final dataset includes **830 planetariums**.  
-- Industry estimates suggest up to **4,000 fulldome theaters** globally, so this dataset may reflect only 20–25% of actual venues.  
-- Still, this open dataset offers a structured and reproducible baseline for:
-  - Global distribution analysis  
-  - Country-level comparisons  
-  - Merging with private databases and industry directories  
+* Non-Latin names translated and retained in parentheses for clarity
+
+**6. Completeness**
+
+* Dataset reflects ~20–25% of the estimated global number of fulldome venues
+
+**🌐 License:** Open Data Commons Open Database License (ODbL) 1.0
+**Curation:** Softmachine Immersive Productions ([Website](https://softmachine.de/) / [GitHub](https://github.com/SoftmachineImmersive))
 
 ---
 
-## 📜 License  
-This dataset is released under the **Open Data Commons Open Database License (ODbL) 1.0**:  
-[https://opendatacommons.org/licenses/odbl/1-0/](https://opendatacommons.org/licenses/odbl/1-0/)
+## 📂 Source Data
 
-You are free to use, share, and modify the data, provided that you:  
-- Attribute [Softmachine Immersive Productions](https://softmachine.de/)  
-- Share any derived datasets under the same license  
-- Link to this license in your work  
-
----
-
-## ✉️ Curation Contact  
-[Softmachine Immersive Productions](https://softmachine.de/)  
-Mail: [mail@softmachine.de](mailto:mail@softmachine.de)  
-GitHub: [https://github.com/SoftmachineImmersive/](https://github.com/SoftmachineImmersive/)  
-Website: [https://softmachine.de/](https://softmachine.de/)
+| Source                      | File                                                                                                                                                                                                                      | Description                                                                       |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| OpenStreetMap / Softmachine | [planetariums_clean_iso_matched_FINAL_FIXED.csv](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/planetariums_clean_iso_matched_FINAL_FIXED.csv)                           | Cleaned list of geotagged planetariums worldwide                                  |
+| World Bank                  | [API_NY.GDP.PCAP.CD_DS2_en_csv_v2_1211477.csv](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/API_NY.GDP.PCAP.CD_DS2_en_csv_v2_1211477.csv)                               | GDP per capita (current US$)                                                      |
+| UNDP                        | [HDR25_Statistical_Annex_HDI_Table.xlsx](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/HDR25_Statistical_Annex_HDI_Table.xlsx)                                           | Education Index (expected years of schooling)                                     |
+| World Bank                  | [API_SP.POP.TOTL_DS2_en_csv_v2_1211945.csv](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/API_SP.POP.TOTL_DS2_en_csv_v2_1211945.csv)                                     | Total population by country                                                       |
+| Our World In Data           | [expenditure-on-cultural-and-natural-heritage-per-capita.csv](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/expenditure-on-cultural-and-natural-heritage-per-capita.csv) | Cultural heritage spending per capita (PPP USD)                                   |
+| Final dataset               | [planetariums_with_culture_spending_v8.csv](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/planetariums_with_culture_spending_v8.csv)                                     | Merged dataset with indicators for education, innovation, and cultural investment |
 
 ---
 
-## 📎 Related Resources  
-- [OpenStreetMap Overpass API](https://overpass-turbo.eu/)  
-- [Natural Earth](https://www.naturalearthdata.com/)  
-- [Softmachine Immersive Productions](https://softmachine.de/)
+## 🔄 Processing & Merging Steps
 
+### Initial Hypothesis:
+
+> Planetarium density is correlated with GDP, education level, or innovation indicators.
+
+### Results:
+
+> **No strong correlation** found between GDP per capita, education index, or patent activity and the density of planetariums. This led to the hypothesis that the presence of planetariums is not purely economically driven but historically path-dependent or linked to cultural policy decisions.
+
+### Final Discovery:
+
+> A **moderately strong correlation** (Pearson r ≈ 0.65) was found between **cultural heritage spending per capita** and **planetariums per million inhabitants**.
+
+---
+
+## 📃 Final Dataset Fields
+
+* `planetariums_count`: Count of planetariums per country
+* `planetariums_per_million`: Core metric
+* `gdp_per_capita_usd`: Economic indicator
+* `education_expected_years`: UNDP educational development metric
+* `population_with_tertiary_percent`: Share of population with higher education
+* `region_patents_2023`: Total patents filed in region (WIPO)
+* `culture_expenditure_per_capita_usd`: Cultural investment level
+* `culture_expenditure_per_planetarium_usd`: Normalized cultural spending per planetarium
+
+---
+
+## 🔍 Key Finding
+
+> “Countries with higher per capita investment in cultural heritage tend to have a higher density of planetariums.”
+
+This supports a refined hypothesis that immersive infrastructure correlates more with **policy and cultural spending** than raw economic indicators.
+
+---
+
+## 🌐 License
+
+This dataset is released under the Open Data Commons Open Database License (ODbL) 1.0 and CC BY 4.0 for derivative works.
+
+* Attribution: **Softmachine Immersive Productions / SIP Mechanic Public**
+* Website: [https://softmachine.de](https://softmachine.de)
+* GitHub: [https://github.com/SoftmachineImmersive](https://github.com/SoftmachineImmersive)
+
+---
+
+## ✨ Next Steps
+
+* Match with museum and library datasets (ICOM, OSM)
+* Expand to XR/dome/mixed immersive infrastructures
+* Explore national policies on science communication
+* Use WHED or UNESCO UIS for university & research center counts
+
+---
+
+*Last updated: October 2025*
+
+📅 Curated by: Softmachine Immersive Productions / SIP Mechanic Public
+
+🔙 [Back to dataset folder ↗](https://github.com/SoftmachineImmersive/immersive-data-hub/tree/main/datasets/osm-planetariums)
