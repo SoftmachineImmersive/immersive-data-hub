@@ -81,9 +81,7 @@ The outcome is a pair of carefully curated, machine-readable CSVs plus a transpa
 
 - Start with **`flying_theatre_manufacturers_products_mobile.csv`** to identify candidate systems for pop-ups, touring, or interim venues. Filter by `explicitly_mobile == "Y"` and review `mobile_claim_source_url` for the exact wording and constraints.  
 - Use **`flying_theatres_clean_v1.csv`** for verified venue examples and initial partner outreach.  
-- Refer to the **planetariums** dataset for broader fulldome infrastructure context:  
-  https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/README.md
-
+  
 ---
 
 ## Limitations
