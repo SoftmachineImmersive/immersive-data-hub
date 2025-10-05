@@ -1,104 +1,121 @@
+# Mobile Flying Theatres — Mobile LED Domes
 
-# Mobile Flying Theatres – Open Datasets (Softmachine)
+This dataset folder is part of the **Immersive Data Hub**, maintained by **Softmachine Immersive Productions**, a creative agency specializing in immersive media, fulldome experiences, and data-driven strategy.
 
-This directory contains open, machine-readable datasets created by Softmachine to answer a practical question for B2B immersive projects:
+We set out to answer a practical question for B2B projects:
 
-> **Which Flying Theatres and LED dome systems are explicitly suitable for mobile / temporary deployments?**
+> **Which Flying Theatres and LED dome systems are explicitly suitable for mobile / temporary deployments (rapid install, easy reassembly, pop-ups, touring)?**
 
-Our goal is to help operators, brands, museums, and event teams assess whether an immersive theatre or LED dome can be **rapidly installed**, **easily reassembled**, and run as **pop-ups or touring exhibits**.
+The outcome is a pair of carefully curated, machine-readable CSVs plus a short, reproducible methodology.
 
 ---
 
-## Datasets
+## Placement in the Immersive Data Hub
 
-- Repository folder (all files):  
+- Repository (context):  
+  **Immersive Data Hub** — structured data, research, and insights on immersive content, fulldome infrastructure, and market signals.
+
+- Folder:  
+  `datasets/Mobile_Flying_Theatres/`  
   https://github.com/SoftmachineImmersive/immersive-data-hub/tree/main/datasets/Mobile_Flying_Theatres
 
-- Manufacturers & products (Flying Theatres), incl. explicit mobility flag (**Y/N**) and evidence:  
+---
+
+## Data Files
+
+- **Flying Theatre manufacturers & products (with mobility evidence)**  
+  `flying_theatre_manufacturers_products_mobile.csv`  
   https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/Mobile_Flying_Theatres/flying_theatre_manufacturers_products_mobile.csv
 
-- Venues (strictly verified) – Clean v1:  
+- **Flying Theatre venues (strictly verified)**  
+  `flying_theatres_clean_v1.csv`  
   https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/Mobile_Flying_Theatres/flying_theatres_clean_v1.csv
 
-> Note: We also maintain a **LED dome manufacturers** table in this folder. In the current research round, no entry met our “explicitly mobile” criterion (see Methods).
+*(A complementary LED-dome manufacturers table is maintained in this folder for discovery. In this research round, no LED dome product met our “explicitly mobile” threshold; see Methods.)*
 
 ---
 
-## Scope and Definitions
+## Scope & Definitions
 
-- **Flying Theatre (FT):** Motion-seat theatre with a large curved or domed screen delivering a “flying” sensation.
-- **LED dome:** Hemispherical/spherical LED display (as opposed to projection domes).
-- **Explicitly mobile (Y):** The **official product page** (or official manufacturer release) uses clear wording such as *mobile / portable / touring / rapid installation / easy reassembly / quick install* for the **product itself**.  
-  - “Modular”, “fits existing buildings”, or “suitable for exhibitions” **alone** does **not** qualify as “explicitly mobile”.
-
----
-
-## Key Finding (short)
-
-- **LED domes:** In this research cycle we found **no official product page** that **explicitly** states mobility/portability for LED domes. All entries currently fall under **N (no explicit claim)**.
-- **Flying Theatres:** We found **at least one candidate** with explicit “rapid installation / minimal space” wording: **Brogent o-Ride / o-Ride E**.  
-  Most relevant source: *Amusement Today* coverage of IAAPA Expo Asia 2025 – “quick installation, easy operation, and minimal space requirements” for **o-Ride E**  
-  → https://amusementtoday.com/2025/07/brogent-announces-the-opening-of-niagara-takes-flight-and-debuts-two-new-rides-at-iaapa-expo-asia-2025/
+- **Flying Theatre (FT):** Motion-seat theatre with a large curved or domed screen that delivers a “flying” sensation.  
+- **LED dome:** Hemispherical/spherical **LED** display surfaces (not projection domes).  
+- **Explicitly mobile (Yes):** The **official product page** or **official manufacturer release** uses clear wording such as *mobile / portable / touring / rapid installation / quick install / easy reassembly* for the **product itself**.  
+  - “Modular,” “suits exhibitions,” or “fits existing buildings” **alone** does **not** qualify.
 
 ---
 
-## Methods
+## Key Result (tl;dr)
 
-1. **Source-first curation**  
-   - Start from known FT/LED vendors and venues; add candidates via conference programs (e.g., IAAPA), trade coverage, and manufacturer ecosystems.
-   - Only consider entries with **official manufacturer pages** (or official brochures/press releases) that describe the **specific product**.
+- **LED domes:** In this cycle, we found **no** official LED-dome product pages that **explicitly** claim “mobile/portable” (so all entries remain **No**).  
+- **Flying Theatres:** We identified **at least one** candidate with explicit fast-setup language: **Brogent o-Ride / o-Ride E**.  
+  - Evidence (manufacturer announcement covered by a recognized trade outlet):  
+    *Amusement Today — IAAPA Expo Asia 2025:* “quick installation, easy operation, and minimal space requirements” for **o-Ride E**  
+    https://amusementtoday.com/2025/07/brogent-announces-the-opening-of-niagara-takes-flight-and-debuts-two-new-rides-at-iaapa-expo-asia-2025/
 
-2. **Mobility evidence test (strict)**  
-   - Mark **explicitly_mobile = Y** only if the **product page** (or **official manufacturer release**) includes explicit mobility wording for the product (examples: *mobile*, *portable*, *touring*, *rapid installation*, *easy reassembly*, *quick install*).  
-   - “Implied mobility” (e.g., mentions of exhibitions or modularity) is recorded in **notes** but remains **N** unless the above wording is present.
+---
 
-3. **Venue verification (Clean v1)**  
-   - The venues table is intentionally small and **strictly verified**: official operator websites for each venue + robust Google Maps query links. Aggregators and unverified lists are excluded.
+## Methods (transparent & reproducible)
 
-4. **Fields & consistency**  
-   - **Manufacturers (FT & LED):** `manufacturer`, `hq_city`, `hq_country`, `website`, `product_name`, `product_url`, `explicitly_mobile (Y/N)`, `mobile_evidence / mobile_claim_note`, `mobile_claim_source_url`, `use_cases`, `maps_link`.  
-   - **Venues (Clean v1):** `name`, `city`, `country`, `website_url` (operator), `maps_url` (query), plus notes where relevant.  
-   - All links prefer **official** sources; all names normalized for deduplication.
+**1) Source discovery**  
+- Seed list from known FT/LED vendors, verified venues, conference programs (e.g., IAAPA), and manufacturer ecosystems.  
+- Only **official manufacturer pages** and **official brochures/press releases** are accepted as primary sources.
 
-5. **What we deliberately do *not* do (yet)**  
-   - No second-hand claims from resellers or non-official blogs.  
-   - No projection domes in the LED table (separate technology class).  
-   - No “implied = Y”. We keep the threshold high to maintain credibility.
+**2) Mobility evidence test (strict threshold)**  
+- `explicitly_mobile = Yes` **only** if the product’s **official page/release** contains explicit mobility wording (see definitions).  
+- “Implied mobility” (e.g., mentions of exhibitions or modular panels) remains **No** until explicit language is found.
+
+**3) Venue verification (Clean v1)**  
+- Each venue entry is backed by an **official operator website** and a robust **Google Maps query link**.  
+- Aggregators and unverified lists are excluded to keep the table dependable for outreach and benchmarking.
+
+**4) Normalization & fields**  
+- **Manufacturers (FT):** typical columns include  
+  `manufacturer`, `product_name`, `website_official`, `product_url`, `explicitly_mobile (Y/N)`, `mobile_evidence / note`, `mobile_claim_source_url`, `use_cases`, `maps_url` (query).  
+- **Venues (Clean v1):**  
+  `name`, `city`, `country`, `website_url` (operator), `maps_url` (query).  
+- Names normalized for deduplication; links prefer official sources.
+
+**5) QA**  
+- Manual review of claims, link hygiene (no dead aggregators), consistent naming, and removal of ambiguous entries.  
+- We favor a **smaller but accurate** dataset over speculative coverage.
+
+**6) Change management**  
+- New evidence that meets the explicit threshold will be appended and version-tagged.  
+- LED-dome entries will flip to **Yes** only with clear wording on an official product or official release page.
 
 ---
 
 ## How to Use
 
-- **Manufacturers (FT):** Start with `flying_theatre_manufacturers_products_mobile.csv`. Filter by `explicitly_mobile == "Y"` and review `mobile_claim_source_url` for the exact wording and constraints (space, rigging, operator requirements).  
-- **Venues:** Use `flying_theatres_clean_v1.csv` as a verified reference set for examples, benchmarking, or outreach.  
-- **LED domes:** Use the LED table for vendor discovery; mobility remains **N** until an official page explicitly states it.
+- Start with **`flying_theatre_manufacturers_products_mobile.csv`** to identify candidate systems for pop-ups, touring, or interim venues.  
+  - Filter by `explicitly_mobile == "Y"` and review `mobile_claim_source_url` to understand scope and constraints.  
+- Use **`flying_theatres_clean_v1.csv`** for verified venue examples and initial partner outreach.
 
 ---
 
 ## Limitations
 
-- Some manufacturers publish mobility language in **press releases** rather than on product pages. Where that release is official (e.g., manufacturer quote hosted by a recognized trade outlet), we include it as evidence and link it.  
-- Certification, load, and evacuation constraints vary by country/venue; “quick install” does not equal “no permitting”. Always confirm engineering and code compliance.
+- Some manufacturers communicate mobility in **press releases** rather than product pages; if the release is official and clearly product-specific, we link it.  
+- Regulatory compliance (load, evacuation, operator training) is **site-specific** and must be validated per project.
 
 ---
 
-## Contributing / Updates
+## Contributing
 
-- Propose additions or corrections via Pull Request or Issue.  
-- Please include: **official product URL**, exact **mobility wording**, and (if possible) a PDF or permanent page location.  
-- We will only flip `explicitly_mobile` to **Y** with **clear, official wording** on the product or official release page.
+- Propose additions via **Pull Request** or **Issue**.  
+- Please include the **official product URL** and quote the **exact mobility wording**.  
+- We only mark `explicitly_mobile = Yes` with **clear, official** language.
+
+---
+
+## License
+
+This dataset is released under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.  
+Please credit: **Softmachine Immersive — https://softmachine.de**
 
 ---
 
-## Citation
+## Maintainer
 
-If you reference these datasets, please cite:
-
-> Softmachine (2025). *Mobile Flying Theatres – Open Datasets.*  
-> GitHub: `immersive-data-hub/datasets/Mobile_Flying_Theatres`  
-> Data files:  
-> - `flying_theatre_manufacturers_products_mobile.csv`  
-> - `flying_theatres_clean_v1.csv`  
-> - (LED dome manufacturers table in the same folder; current entries: explicitly_mobile = N)
-
----
+**Softmachine Immersive Productions**  
+We create immersive experiences, fulldome shows, and data-driven strategy for brands, museums, and events.
