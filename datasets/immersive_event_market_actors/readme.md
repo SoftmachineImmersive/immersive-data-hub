@@ -14,8 +14,11 @@ This repository hosts the `immersive-market-participants-extended.csv` dataset, 
 ## Management and Source
 This dataset originated from research for the [Immersive Events Whitepaper](https://softmachine.de/immersive-events-whitepaper), providing the foundational data for its analysis. It is now managed on GitHub as an open, collaborative resource, with the community encouraged to contribute. For an interactive exploration with filtering, sorting, and visualizations, visit the Whitepaper.
 
-## License
-The usage of this dataset is governed by the licensing regulations of the parent directory (immersive-data-hub). Please refer to the root [LICENSE](https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/LICENSE) file for details. By default, contributions and usage are subject to these terms.
+## License for Immersive Market Participants Dataset
+
+This dataset is licensed under a custom restriction overriding the parent directory's CC BY 4.0 License. While attribution to Softmachine Immersive Productions[](https://softmachine.de) is required, 1:1 reproduction or commercial use of the text-based descriptions is prohibited without prior written permission. Derivative works or adaptations must also be approved. See [contact](https://softmachine.de) for authorization.
+
+This license applies specifically to `immersive-market-participants-extended.csv` and takes precedence over the parent directory's license for this file.
 
 ## Contributing
 We warmly welcome community contributions to expand and enhance this dataset! If you have additional market participants to add or corrections to suggest:
