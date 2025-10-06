@@ -3,4 +3,4 @@ Disallow: /
 
 # Crawling disabled to avoid duplicate indexing with softmachine.de
 # Repository maintained by Softmachine Immersive Productions
-# Visit https://softmachine.de for official content and updates
+# Visit https://softmachine.de/ for official content and updates
