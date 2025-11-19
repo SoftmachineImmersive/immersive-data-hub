@@ -52,10 +52,12 @@ Use cases include:
 ## Key Results (condensed)
 
 - **Global relevance of immersive media has risen sharply**, with several immersive terms showing multi-year upward trajectories in news frequency.  
-- **“Immersive experience” and “immersive storytelling” exhibit the strongest sustained growth**, indicating that immersive media now expands beyond technology into culture, communication and experience design.  
-- **VR and AR show slower, more volatile patterns**, suggesting that public discourse moves from hardware-driven narratives toward broader experiential frameworks.  
-- **Control keywords confirm data stability**, showing the expected decline for older media terms and stable baselines for neutral words.  
-- Overall, the dataset reveals a **structural cultural shift from technical terminology to narrative-experiential framing**, marking immersive media as a long-term societal theme rather than a short-cycle tech trend.
+- **“Immersive experience” and “immersive storytelling” exhibit the strongest sustained growth**, indicating that immersive media moves from a purely technical framing towards culture, communication and experience design.  
+- **VR and AR show slower, more volatile patterns**, suggesting that public discourse gradually shifts from hardware-centric narratives towards broader experiential frameworks.  
+- **Control keywords confirm data stability:**  
+  - The baseline media term **“television”** shows a clear decline over time, consistent with the long-term erosion of its cultural centrality.  
+  - The dataset successfully identifies the dog **“Uggie”** (famous from the film *The Artist*) as a distinct entity in the reference set, demonstrating that specific named entities can be tracked and recognised reliably across the corpus.  
+- Overall, the dataset points to a **structural cultural shift from technical terminology to narrative-experiential framing**, marking immersive media as a long-term societal theme rather than a short-cycle tech trend.
 
 Further interpretation and concrete narrative use of these results can be found in:
 
