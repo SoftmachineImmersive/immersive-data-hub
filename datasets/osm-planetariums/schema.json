@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OSM Based Planetariums Dataset",
+  "description": "Schema for planetariums_with_population_and_regions_FINAL_FORMATTED.csv – a global list of planetarium venues enriched with population and regional context.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable unique identifier for the venue (slug or code)."
+    },
+    "name": {
+      "type": "string",
+      "description": "Canonical name of the planetarium venue."
+    },
+    "type": {
+      "type": ["string","null"],
+      "description": "Type/classification of the venue if specified, e.g. \"Fulldome\", \"Science Centre Planetarium\"."
+    },
+    "format": {
+      "type": ["string","null"],
+      "description": "Primary format or technology of the venue, e.g. \"Fulldome\", \"LED dome\", \"Hybrid immersive theatre\"."
+    },
+    "tagged_as_planetarium": {
+      "type": ["boolean","null"],
+      "description": "True if the venue is explicitly tagged in OSM as a planetarium; false or null if inferred."
+    },
+    "country": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code, e.g. \"US\", \"DE\", \"JP\"."
+    },
+    "region": {
+      "type": ["string","null"],
+      "description": "Administrative region/state/province if available."
+    },
+    "city": {
+      "type": ["string","null"],
+      "description": "City of the venue."
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude of the venue in WGS84 decimal degrees."
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude of the venue in WGS84 decimal degrees."
+    },
+    "world_region": {
+      "type": ["string","null"],
+      "description": "Macro world region category, e.g. \"Europe\", \"Asia-Pacific\", \"Latin America\", \"MENA\", \"North America\"."
+    },
+    "population": {
+      "type": ["integer","null"],
+      "description": "Population of the city or metro area where the venue is located, if available."
+    },
+    "region_population": {
+      "type": ["integer","null"],
+      "description": "Population of the wider region or administrative area, if available."
+    },
+    "status_active": {
+      "type": "boolean",
+      "description": "True if the venue is currently operational; false if closed or inactive."
+    },
+    "source": {
+      "type": "string",
+      "description": "Primary source from which the venue entry was derived, e.g. \"OpenStreetMap Overpass\"."
+    },
+    "source_url": {
+      "type": ["string","null"],
+      "format": "uri",
+      "description": "URL for the venue official website or primary data source used."
+    },
+    "last_verified": {
+      "type": ["string","null"],
+      "format": "date",
+      "description": "Date of the last manual verification of the venue data (YYYY-MM-DD)."
+    },
+    "notes": {
+      "type": ["string","null"],
+      "description": "Free-text notes on the entry, e.g. verification issues, historical context."
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "country",
+    "latitude",
+    "longitude",
+    "status_active",
+    "source"
+  ],
+  "additionalProperties": false
+}
