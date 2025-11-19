@@ -16,39 +16,49 @@ This dataset consists of:
   The main data file containing all global planetarium venues, with geolocation, country, region, population context and operational status.
 
 - **methodology.md**  
-  A detailed documentation of how the dataset was collected, enriched, verified, and structured, including inclusion criteria, OSM extraction logic, population data merging and limitations.  
-  → View here:  
-  https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/methodology.md
+  Documentation of how the dataset was collected, enriched, verified, and structured, including inclusion criteria, OSM extraction logic, data cleaning, population merging, and limitations.  
+  → https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/methodology.md
 
 - **schema.json**  
-  A JSON Schema defining all expected fields, datatypes and structural rules of the CSV for validation and interoperability.  
-  → View here:  
-  https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/schema.json
+  A JSON Schema defining all expected fields, datatypes and structural rules of the CSV.  
+  → https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/osm-planetariums/schema.json
 
 ---
 
 ## Purpose
 
-This dataset enables:
+This dataset examines how immersive science infrastructures like planetariums relate to broader socio-economic conditions such as education, GDP per capita and cultural investment. It treats planetariums as cultural indicators that reflect how societies value knowledge, learning and imagination.
+
+It enables:
 
 - mapping and comparison of planetarium venues globally  
 - geographic and demographic analysis  
-- research into immersive infrastructures  
+- research into immersive and science-communication infrastructures  
 - planning of Fulldome distribution strategies  
 - integration into larger immersive-media datasets and pipelines  
-- academic or journalistic use
+- academic or journalistic work
 
-It offers a unified, verified, global baseline for understanding the density and distribution of planetariums across world regions.
+It offers a unified, verified global baseline for understanding the density and distribution of planetariums across world regions.
+
+---
+
+## Key results
+
+- The dataset harmonises more than 800 verified planetariums worldwide into a consistent structure, combining OSM venue data with population and regional indicators.  
+- Spatial and demographic comparison strongly suggests that the presence of planetariums correlates more with cultural policy, public education strategies and the long-term value placed on science communication than with pure economic strength.  
+- Some highly developed regions show surprisingly low coverage, while culturally ambitious regions with moderate GDP maintain dense networks of venues.  
+- This pattern indicates that planetariums are not typical market-driven entertainment infrastructures, but rather **publicly subsidised cultural-educational institutions** with long-term societal objectives.  
+- This makes the dataset a useful **indirect indicator for publicly funded cultural infrastructure** within regions.  
+- Whether planetariums should be categorised more broadly as systematic **economic subsidy institutions** (Ökonomische Zuschussbetriebe) requires further economic analysis and can be explored in future studies—this dataset provides an empirical baseline for such inquiries.
 
 ---
 
 ## Source principles
 
-- OSM is the primary global source.  
-- Data is enriched with population and world-region context.  
-- All entries are checked for plausibility and duplicates.  
-- When possible, venues are verified using official websites or institutional references.  
-- Status information (`status_active`) is manually curated.
+- OSM is the primary global source for venue locations and base attributes.  
+- Population and world-region data come from established statistical datasets.  
+- All entries undergo plausibility checks and manual verification where feasible.  
+- Status information (`status_active`) is curated manually.
 
 For full details see **methodology.md**.
 
