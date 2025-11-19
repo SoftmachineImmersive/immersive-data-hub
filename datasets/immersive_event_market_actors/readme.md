@@ -1,41 +1,73 @@
-# Immersive Event Market Actors Dataset
+# Immersive Market Participants Dataset
 
-This repository hosts the `immersive-market-participants-extended.csv` dataset, a comprehensive list of key actors in the immersive media industry. This dataset was initially developed as part of the research conducted for Softmachine's [Immersive Events Whitepaper](https://softmachine.de/immersive-events-whitepaper) and is now actively maintained on GitHub as a community-driven resource for tracking companies, artists, venues, and organizations driving VR, AR, and immersive experiences.
+The Immersive Market Participants dataset is a curated mapping of key actors in the global immersive media ecosystem.  
+It covers organisations, venues, festivals, artists, technology providers, distributors, and associations that shape immersive media, immersive storytelling, and immersive events.
 
-## Overview
-- **File**: [immersive-market-participants-extended.csv](immersive-market-participants-extended.csv)
-- **Columns**:
-  - `Name`: Name of the market participant (company, artist, venue, or organization).
-  - `Link`: Website or relevant URL (or "N/A" if not available).
-  - `Description`: Brief description of the participant's role or contribution.
-  - `Category`: Thematic category (e.g., Technology, Agencies, Artists, Events, Associations, Venues).
-- **Total Entries**: Approximately 220 actors, categorized for easy filtering, with numeric entries grouped under "n°".
-
-## Management and Source
-This dataset originated from research for the [Immersive Events Whitepaper](https://softmachine.de/immersive-events-whitepaper), providing the foundational data for its analysis. It is now managed on GitHub as an open, collaborative resource, with the community encouraged to contribute. For an interactive exploration with filtering, sorting, and visualizations, visit the Whitepaper.
-
-## License for Immersive Market Participants Dataset
-
-This dataset is licensed under a custom restriction overriding the parent directory's CC BY 4.0 License. While attribution to Softmachine Immersive Productions[](https://softmachine.de) is required, 1:1 reproduction or commercial use of the text-based descriptions is prohibited without prior written permission. Derivative works or adaptations must also be approved. See [contact](https://softmachine.de) for authorization.
-
-This license applies specifically to `immersive-market-participants-extended.csv` and takes precedence over the parent directory's license for this file.
-
-## Contributing
-We warmly welcome community contributions to expand and enhance this dataset! If you have additional market participants to add or corrections to suggest:
-1. Fork this repository.
-2. Create a branch for your changes (e.g., `add-new-actor`).
-3. Update the `immersive-market-participants-extended.csv` file with your additions or modifications (maintain the structure and categories).
-4. Submit a Pull Request (PR) with a clear description of your changes, including the rationale for the addition.
-5. Your contribution will be reviewed and merged by the Softmachine team.
-
-Thank you for helping us build a robust, up-to-date resource for the immersive media community!
-
-## Usage
-- Download the CSV file for research, analysis, or integration into your projects.
-- For an interactive experience, explore the list in the [Immersive Events Whitepaper](https://softmachine.de/immersive-events-whitepaper).
-
-## Contact
-For questions or feedback, please open an issue in this repository or contact us via [softmachine.de](https://softmachine.de).
+The dataset is curated by Martin Sambauer (https://martin-sambauer.com)  
+and published and owned by Softmachine (https://softmachine.de) as part of the immersive-data-hub.
 
 ---
-*Last updated: October 06, 2025*
+
+## Contents
+
+The dataset consists of:
+
+- immersive-market-participants-extended.csv  
+  The primary file listing all market participants with categories, locations, descriptions, formats, tags, status, and metadata.
+
+- methodology.md  
+  A detailed explanation of the data sources, inclusion criteria, curation workflow, classification logic, limitations, and update strategy.  
+  → View here:  
+  https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/immersive_event_market_actors/methodology.md
+
+- schema.json  
+  A JSON Schema describing the structure and expected datatypes of the CSV for validation and interoperability.  
+  → View here:  
+  https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/immersive_event_market_actors/schema.json
+
+---
+
+## Purpose
+
+The dataset provides a structured overview of the global immersive media landscape and can be used for:
+
+- market research  
+- competitive analysis  
+- partner scouting  
+- academic or journalistic research  
+- mapping of venues, festivals, and technology providers  
+- whitepapers, strategic documents, and industry reports
+
+It is global in scope and designed to be updated over time.
+
+---
+
+## Source principles
+
+- All entries are manually curated.  
+- Only verified organisations with a demonstrable role in immersive media are included.  
+- Descriptions are concise, factual, and based on official public sources.  
+- Categories follow a high-level logic that supports B2B and research use cases.  
+- Status and verification timestamps document the maintenance cycle.
+
+For full details see methodology.md.
+
+---
+
+## Licensing
+
+The dataset is released under Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+Required attribution:
+
+Softmachine – immersive media and events (softmachine.de)  
+Dataset curated by Martin Sambauer (martin-sambauer.com)
+
+For specific details on textual descriptions and reuse, see methodology.md.
+
+---
+
+## Explore and licensing
+
+Explore. repository folder · CSV dataset · article with insights  
+Licensing. CC BY 4.0 · © Softmachine · softmachine.de
