@@ -27,7 +27,6 @@ This dataset contains:
   → https://github.com/SoftmachineImmersive/immersive-data-hub/blob/main/datasets/immersive-keywords/schema.json
 
 - **Articles with insights**  
-  Analytical interpretation, visualisations and narrative context based on this dataset:  
   → Immersive Keywords – https://martin-sambauer.com/immersive-keywords/  
   → Origins of Wonder – An Immersive Impact Investment – https://martin-sambauer.com/origins-of-wonder-an-immersive-impact-investment/
 
@@ -36,43 +35,116 @@ This dataset contains:
 ## Purpose
 
 This dataset provides a quantitative foundation for understanding how immersive media enters cultural consciousness.  
-It enables researchers, creatives and strategists to track the diffusion of immersive terminology across time and to compare immersive concepts against each other or against baseline control keywords.
+It enables researchers, creatives and strategists to track the diffusion of immersive terminology across time and compare immersive concepts against each other or baseline controls.
 
 Use cases include:
 
 - longitudinal trend analysis  
 - cultural diffusion and adoption research  
 - comparison of emerging vs. mature immersive concepts  
-- input for whitepapers, market reports, strategic documents  
+- input for whitepapers, market reports and strategic documents  
 - qualitative–quantitative hybrid research  
-- evidence base for essays and impact-investment narratives on immersive media (as in the example articles linked above)
+- evidence base for essays and impact-investment narratives (see linked articles)
 
 ---
 
-## Key Results (condensed)
+## Key Results (with example graphics)
 
-- **Global relevance of immersive media has risen sharply**, with several immersive terms showing multi-year upward trajectories in news frequency.  
-- **“Immersive experience” and “immersive storytelling” exhibit the strongest sustained growth**, indicating that immersive media moves from a purely technical framing towards culture, communication and experience design.  
-- **VR and AR show slower, more volatile patterns**, suggesting that public discourse gradually shifts from hardware-centric narratives towards broader experiential frameworks.  
-- **Control keywords confirm data stability:**  
-  - The baseline media term **“television”** shows a clear decline over time, consistent with the long-term erosion of its cultural centrality.  
-  - The dataset successfully identifies the dog **“Uggie”** (famous from the film *The Artist*) as a distinct entity in the reference set, demonstrating that specific named entities can be tracked and recognised reliably across the corpus.  
-- Overall, the dataset points to a **structural cultural shift from technical terminology to narrative-experiential framing**, marking immersive media as a long-term societal theme rather than a short-cycle tech trend.
+### 1. Immersive storytelling and immersive experience rise sharply  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/immersive-storytelling-graph.jpg  
 
-Further interpretation and concrete narrative use of these results can be found in:
+This graph shows the multi-year rise of “immersive storytelling”, making it one of the strongest and most stable growth terms in the dataset.  
+It demonstrates a structural narrative shift: immersive media is no longer seen primarily as technology, but as a mode of communication and creative expression.
 
-- https://martin-sambauer.com/immersive-keywords/  
-- https://martin-sambauer.com/origins-of-wonder-an-immersive-impact-investment/
+---
+
+### 2. Traditional media declines: “television” as benchmark  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/television-decline-immersive-keywords.jpg  
+
+“Television” serves as a reference keyword.  
+Its steady decline confirms both:  
+- long-term erosion of TV’s cultural centrality  
+- dataset consistency (expected baseline behaviour)
+
+---
+
+### 3. The dataset identifies the dog *Uggie* (The Artist) – validation of named entities  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/dog-immersive-keywords-dataset.jpg  
+
+The dataset successfully isolates “Uggie” as a distinct entity, demonstrating that:  
+- named entities are identifiable  
+- cultural signals can be traced precisely even when niche
+
+This acts as a validation of correctness and sensitivity within the corpus.
+
+---
+
+### 4. AR shows slow but steady growth with volatility  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/ar-immersive-keywords-dataset.jpg  
+
+AR grows, but exhibits fluctuations linked to product cycles and hype waves.  
+It suggests a transition phase: AR is culturally relevant, but still tied to the tech-industry narrative.
+
+---
+
+### 5. VR shows stronger peaks but weaker structural progression  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/vr-immersive-keywords-dataset.jpg  
+
+VR produces clear spikes around hardware moments or major releases — but its long-term trajectory is flatter.  
+The dataset indicates that VR is no longer the sole driver of immersive discourse.
+
+---
+
+### 6. “Immersive learning” emerges as a strong mid-tier growth field  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/immersive-learning-immersive-keywords-dataset.jpg  
+
+“Immersive learning” is steadily rising and shows signs of becoming a culturally anchored term in education, museums, corporate training and learning environments.
+
+---
+
+### 7. “Immersive experience” remains one of the strongest long-term trends  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/immersive-exeprience-immersive-keywords-dataset.jpg  
+
+This graph confirms that broad experiential framing outpaces technical terminology.  
+Immersive media is increasingly framed as an experience, not a device.
+
+---
+
+### 8. Artificial Intelligence intersects with immersive media  
+**Graphic:**  
+http://martin-sambauer.com/wp-content/uploads/2025/11/artificiial-intelligence-immersive-keywords-dataset.jpg  
+
+AI shows an exponential rise that overlaps strongly with immersive keywords.  
+This suggests that immersive media is entering a convergence phase with AI-driven creativity and narrative automation.
+
+---
+
+### Overall interpretation
+- Immersive media discourse is rising globally.  
+- Narrative and experiential terms grow faster than technical ones.  
+- Control benchmarks (“television”, “Uggie”) validate dataset quality.  
+- AR/VR fluctuate and increasingly play supporting roles in broader cultural framing.  
+- The dataset reveals a long-term structural shift toward **experience-centric thinking** in media, culture and communication.
+
+Additional interpretation and use cases:  
+https://martin-sambauer.com/immersive-keywords/  
+https://martin-sambauer.com/origins-of-wonder-an-immersive-impact-investment/
 
 ---
 
 ## Source Principles
 
-- Global online news data retrieved through the MediaCloud API.  
-- Keywords selected based on relevance to immersive media, spatial storytelling, and experiential technologies.  
-- Counts normalized relative to total daily article volume to ensure comparability.  
-- Control keywords included for baseline calibration and sanity checks.  
-- Data cleaning and aggregation documented in methodology.md.
+- Global news data retrieved from the MediaCloud API  
+- Normalized counts for cross-temporal comparability  
+- Control keywords included for calibration  
+- Processing steps described in methodology.md
 
 ---
 
@@ -84,8 +156,6 @@ Required attribution:
 
 **Softmachine** (softmachine.de) – Publisher  
 **Curated by Martin Sambauer** (martin-sambauer.com)
-
-For additional conditions regarding textual fields and reuse, see methodology.md.
 
 ---
 
