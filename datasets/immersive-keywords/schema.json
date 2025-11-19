@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Immersive Keywords Dataset",
+  "description": "Schema for keyword frequency datasets (daily/raw and yearly aggregated) tracking immersive-media keyword mentions in global online news.",
+  "type": "object",
+  "properties": {
+    "keyword": {
+      "type": "string",
+      "description": "The immersive-media keyword or control keyword being tracked."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the count (YYYY-MM-DD for daily files, YYYY-01-01 for yearly aggregated)."
+    },
+    "count_mentions": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of article mentions of the keyword on that date/time unit."
+    },
+    "count_articles": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of articles processed on that date/time unit (denominator for normalization)."
+    },
+    "normalized_rate": {
+      "type": "number",
+      "description": "Mentions per 100 (or per defined unit) articles, normalised for comparability."
+    },
+    "region": {
+      "type": ["string", "null"],
+      "description": "Optional region or language filter, if the count is region-specific."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional free‐text notes about anomalies, gaps or data quality issues on that row."
+    }
+  },
+  "required": ["keyword", "date", "count_mentions", "count_articles", "normalized_rate"],
+  "additionalProperties": false
+}
