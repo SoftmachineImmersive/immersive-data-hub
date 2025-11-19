@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Immersive Market Participants",
+  "description": "Schema for immersive-market-participants-extended.csv – a curated list of organisations, venues, artists, festivals and other actors in the immersive media ecosystem.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable unique identifier for the participant (slug-style, lowercase, no spaces)."
+    },
+    "name": {
+      "type": "string",
+      "description": "Canonical name of the market participant."
+    },
+    "category": {
+      "type": "string",
+      "description": "Primary category describing the participant's role in the immersive ecosystem, e.g. Technology, Agency, Artist, Event, Venue, Association, Festival, Distributor, Other."
+    },
+    "subcategories": {
+      "type": ["string", "null"],
+      "description": "Optional comma-separated list of additional roles or subcategories, e.g. \"Production studio, Realtime content\"."
+    },
+    "country": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code of the primary base of operations, e.g. \"US\", \"DE\", \"JP\"."
+    },
+    "region": {
+      "type": ["string", "null"],
+      "description": "World region or macro-area, such as \"Europe\", \"North America\", \"Latin America\", \"Asia-Pacific\", \"MENA\"."
+    },
+    "city": {
+      "type": ["string", "null"],
+      "description": "Primary city of operation or headquarters, if known."
+    },
+    "latitude": {
+      "type": ["number", "null"],
+      "description": "Latitude of the participant's primary location in WGS84 decimal degrees. Null if not available."
+    },
+    "longitude": {
+      "type": ["number", "null"],
+      "description": "Longitude of the participant's primary location in WGS84 decimal degrees. Null if not available."
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website URL for the participant."
+    },
+    "description_short": {
+      "type": "string",
+      "description": "One-line neutral summary of the participant's role in the immersive ecosystem."
+    },
+    "description_long": {
+      "type": ["string", "null"],
+      "description": "Optional extended description with more context on activities, history and formats."
+    },
+    "formats": {
+      "type": ["string", "null"],
+      "description": "Optional comma-separated list of core immersive formats, e.g. \"Fulldome, XR\", \"Projection mapping\", \"Immersive theatre\"."
+    },
+    "tags": {
+      "type": ["string", "null"],
+      "description": "Optional comma-separated list of keywords for search and grouping, e.g. \"LBE, Location-based entertainment, LED dome\"."
+    },
+    "founded_year": {
+      "type": ["integer", "null"],
+      "minimum": 1800,
+      "maximum": 2100,
+      "description": "Year the participant was founded or first publicly active, if known."
+    },
+    "status_active": {
+      "type": "boolean",
+      "description": "True if the participant is currently active; false if it is closed, inactive or historical."
+    },
+    "source": {
+      "type": "string",
+      "description": "Primary source from which the entry was created or confirmed, e.g. \"Immersive Events Whitepaper\"."
+    },
+    "source_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "URL of the main reference used when curating this entry (official site, festival page, institutional profile, etc.)."
+    },
+    "last_verified": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Date when this entry was last manually checked (YYYY-MM-DD). Null if not yet tracked."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-text notes about curation decisions, edge cases or partial information."
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "category",
+    "country",
+    "website",
+    "description_short",
+    "source",
+    "status_active"
+  ],
+  "additionalProperties": true
+}
