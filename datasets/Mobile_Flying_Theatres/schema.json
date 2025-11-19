@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Mobile Flying Theatres & Mobile LED Domes Dataset",
+  "description": "Schema for mobile-flying-theatres dataset – global list of mobile flying theatre and mobile LED dome installations in the immersive media sector.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the installation (slug or code)."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the mobile venue or installation."
+    },
+    "manufacturer": {
+      "type": ["string", "null"],
+      "description": "Manufacturer or operator of the mobile venue."
+    },
+    "mobile": {
+      "type": "boolean",
+      "description": "Flag indicating mobility (true = relocatable/deployed installation)."
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of installation: Flying Theatre or LED Dome."
+    },
+    "seat_count": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Number of seats in the installation, if applicable."
+    },
+    "dome_diameter_m": {
+      "type": ["number", "null"],
+      "description": "Dome diameter in metres, if applicable."
+    },
+    "led_panel_area_m2": {
+      "type": ["number", "null"],
+      "description": "Area of LED panels in square metres, if applicable."
+    },
+    "country": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code of primary deployment."
+    },
+    "region": {
+      "type": ["string", "null"],
+      "description": "Macro region or state/province if known."
+    },
+    "city": {
+      "type": ["string", "null"],
+      "description": "Primary city or base location of the installation."
+    },
+    "latitude": {
+      "type": ["number", "null"],
+      "description": "Latitude of base location in WGS84 decimal degrees."
+    },
+    "longitude": {
+      "type": ["number", "null"],
+      "description": "Longitude of base location in WGS84 decimal degrees."
+    },
+    "first_deployment_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Date when the mobile installation was first deployed."
+    },
+    "latest_deployment_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Date of most recent known deployment."
+    },
+    "status_active": {
+      "type": "boolean",
+      "description": "True if the installation is currently active/in operation; false if retired or out of service."
+    },
+    "source": {
+      "type": "string",
+      "description": "Primary source name used for verification (e.g., manufacturer website, press release)."
+    },
+    "source_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "URL of the main reference used to verify this entry."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-text notes about deployment, version changes, or incomplete data."
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "mobile",
+    "type",
+    "country",
+    "status_active",
+    "source"
+  ],
+  "additionalProperties": false
+}
