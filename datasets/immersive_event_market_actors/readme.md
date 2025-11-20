@@ -71,3 +71,10 @@ For specific details on textual descriptions and reuse, see methodology.md.
 
 Explore. repository folder · CSV dataset · article with insights  
 Licensing. CC BY 4.0 · © Softmachine · softmachine.de
+
+## Knowledge Graph Reference
+
+This dataset is part of the Immersive Datasets library by Martin Sambauer.  
+For semantic context and machine-readable metadata, see the root-level knowledge graph:
+
+[martin-sambauer-knowledge-graph.json](../../martin-sambauer-knowledge-graph.json)
